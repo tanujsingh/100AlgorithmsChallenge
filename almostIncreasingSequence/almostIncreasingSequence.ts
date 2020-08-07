@@ -8,13 +8,13 @@ function almostIncreasingSequence(sequence: number[]): boolean {
         // Gives you either increasing or decreasing sequence possibility
         const direction = sequence[1] - sequence[0]    
         for (let j = 0; j < sequence.length; j++) {
-            if (direction * (sequence[j+1] - sequence[j]) <= 0) {
+            if (direction * (sequence[j+1] - sequence[j]) < 0) {
                 temp++;
             }
         }
 
         // To verify that sequence is increasing 
-        if (temp === 0 && sequence[1] > sequence[0]) {
+        if (temp === 0 && sequence[1] >= sequence[0]) {
             return true
         } 
         
@@ -26,7 +26,7 @@ function almostIncreasingSequence(sequence: number[]): boolean {
     
 }
 
-console.log(almostIncreasingSequence([1, 3, 2, 1])); // false
+console.log(almostIncreasingSequence([1, 3, 1, 2])); // false
 console.log(almostIncreasingSequence([1, 3, 2])); // true
 console.log(almostIncreasingSequence([3, 5, 67, 98, 3])); // true
 console.log(almostIncreasingSequence([4, 3, 5, 67, 98, 3])); // false
