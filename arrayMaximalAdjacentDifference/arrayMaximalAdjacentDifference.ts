@@ -3,8 +3,7 @@ function arrayMaximalAdjacentDifference(inputArray: number[]): number {
 
     for (let i = 1; i < inputArray.length; i++) {        
         let difference = Math.abs(inputArray[i - 1] - inputArray[i])
-        if (difference > maxDifference) {
-            maxDifference = difference
+        maxDifference = difference > maxDifference ? difference : maxDifference
         }
     }
     
